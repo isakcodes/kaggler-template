@@ -22,8 +22,8 @@ def generate_feature(train_file, test_file, train_feature_file,
 
     trn.drop(TARGET_COL, axis=1, inplace=True)
 
-    cat_cols = [x for x in trn.columns if trn[x].dtype == np.object]
-    num_cols = [x for x in trn.columns if trn[x].dtype != np.object]
+    cat_cols = [x for x in trn.columns if trn[x].dtype == object]
+    num_cols = [x for x in trn.columns if trn[x].dtype != object]
 
     logging.info(f'categorical: {len(cat_cols)}, numerical: {len(num_cols)}')
 
